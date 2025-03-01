@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class TareaOrdenamiento {
 
     public static void main(String[] args) {
@@ -9,7 +10,7 @@ public class TareaOrdenamiento {
     public TareaOrdenamiento() {}
 
     public void probarOrdenamientos() {
-       
+    
         Vaporizador vaporizador1 = new Vaporizador("Airfuze", 70000, 30000);
         Vaporizador vaporizador2 = new Vaporizador("Dummy", 35000, 8000);
         Vaporizador vaporizador3 = new Vaporizador("Death Row", 28000, 7500);
@@ -21,7 +22,7 @@ public class TareaOrdenamiento {
 
         Vaporizador[] vaporizadores = {vaporizador1, vaporizador2, vaporizador3, vaporizador4, vaporizador5, vaporizador6, vaporizador7, vaporizador8};
 
-       
+
         ordenarPorBurbuja(vaporizadores);
 
         System.out.println("Vaporizadores ordenados por precio:");
@@ -29,14 +30,16 @@ public class TareaOrdenamiento {
             System.out.println(v);
         }
 
-        
+    
         Scanner scanner = new Scanner(System.in);
-
+        
+    
         boolean continuarBuscando = true;
         while (continuarBuscando) {
             System.out.print("\nIntroduce el nombre del vaporizador que deseas buscar: ");
             String nombreBuscado = scanner.nextLine();  
-            
+
+        
             Vaporizador resultado = buscarVaporizadorPorNombre(vaporizadores, nombreBuscado);
 
             if (resultado != null) {
@@ -45,7 +48,6 @@ public class TareaOrdenamiento {
                 System.out.println("\nNo se encontró el vaporizador con el nombre: " + nombreBuscado);
             }
 
-            
             System.out.print("\n¿Deseas realizar otra búsqueda? (s/n): ");
             String respuesta = scanner.nextLine();
             if (respuesta.equalsIgnoreCase("n")) {
@@ -56,16 +58,14 @@ public class TareaOrdenamiento {
         scanner.close(); 
     }
 
- 
     public Vaporizador buscarVaporizadorPorNombre(Vaporizador[] vaporizadores, String nombreBuscado) {
         for (Vaporizador v : vaporizadores) {
             if (v.getNombre().equalsIgnoreCase(nombreBuscado)) { 
                 return v;
             }
         }
-        return null;  
+        return null; 
     }
-
 
     public void ordenarPorBurbuja(Vaporizador[] vaporizadores) {
         int n = vaporizadores.length;
@@ -80,7 +80,6 @@ public class TareaOrdenamiento {
         }
     }
 
-  
     class Vaporizador {
         private String nombre;
         private double precio;
@@ -96,12 +95,12 @@ public class TareaOrdenamiento {
             return nombre;
         }
 
-        public double getPrecio() {
+        public double getPreio() {
             return precio;
         }
 
         public int getCantidadPuff() {
-            return cantidadPuff;
+            return cantidadPucff;
         }
 
         @Override
